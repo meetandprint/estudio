@@ -10,7 +10,7 @@
   <link rel="manifest" href="manifest.json">
   <title>Estudio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0f0f0f;
@@ -32,7 +32,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Roboto', sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100dvh;
@@ -87,7 +87,7 @@
     }
 
     h1 {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 28px;
       font-weight: 400;
       margin-bottom: 6px;
@@ -105,7 +105,7 @@
       padding: 40px 0 32px;
     }
     .timer-time {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 72px;
       letter-spacing: 2px;
       color: var(--text);
@@ -276,7 +276,7 @@
     }
     .stat-card.wide { grid-column: 1 / -1; }
     .stat-value {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 28px;
       color: var(--accent);
       line-height: 1.1;
@@ -319,7 +319,7 @@
       color: var(--text-dim);
     }
     .session-duration {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 20px;
       color: var(--accent);
       white-space: nowrap;
@@ -832,7 +832,7 @@ async function saveSession() {
   if (apiUrl) {
     try {
       showToast('Guardando en Sheets…', 'success');
-await fetch(apiUrl, {
+      await fetch(apiUrl, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'text/plain' },
@@ -916,7 +916,6 @@ function renderHistory() {
 function renderWeekChart(sessions) {
   const chart = document.getElementById('week-chart');
   const days = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
-  const todayIdx = new Date().getDay();
 
   // Build last 7 days data
   const data = [];
