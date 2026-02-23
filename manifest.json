@@ -2,7 +2,7 @@
   "name": "Estudio — Registro de Sesiones",
   "short_name": "Estudio",
   "description": "Registra y cronometra tus sesiones de estudio",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0f0f0f",
   "theme_color": "#0f0f0f",
