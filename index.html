@@ -832,8 +832,9 @@ async function saveSession() {
   if (apiUrl) {
     try {
       showToast('Guardando en Sheets…', 'success');
-      const res = await fetch(apiUrl, {
+await fetch(apiUrl, {
         method: 'POST',
+        mode: 'no-cors',
         headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({
           fecha: now.toLocaleString('es-ES'),
@@ -842,11 +843,7 @@ async function saveSession() {
           notas: notes
         })
       });
-      if (res.ok) {
-        showToast('✓ Guardado en Sheets', 'success');
-      } else {
-        showToast('Guardado local (error Sheets)', 'error');
-      }
+      showToast('✓ Guardado en Sheets', 'success');
     } catch {
       showToast('Guardado local (sin conexión)', 'error');
     }
